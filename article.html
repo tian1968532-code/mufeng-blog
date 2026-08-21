@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>文章详情 · 沐枫博客</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 导航 -->
+<header id="header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">沐</span>
+      <span class="brand-name">沐枫博客<small>AI · 职业外脑</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#about">关于我</a>
+      <a href="index.html#products">核心产品</a>
+      <a href="index.html#posts">文章</a>
+      <a href="index.html#contact" class="nav-cta">约我聊聊</a>
+    </nav>
+    <div class="nav-burger" id="burger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<!-- 文章头 -->
+<section class="article-hero">
+  <div class="article-head">
+    <div class="cat" id="aCat">职业外脑</div>
+    <h1 id="aTitle">35 岁职场卡壳怎么办？把经验沉淀成可复利的资产</h1>
+    <div class="article-meta">
+      <span id="aDate">📅 2026-08-21</span>
+      <span id="aRead">⏱ 阅读约 5 分钟</span>
+      <span>✍️ 沐枫老师</span>
+    </div>
+  </div>
+  <div class="article-cover t3" id="aCover">职业外脑</div>
+</section>
+
+<!-- 正文 -->
+<article class="article-body">
+  <div class="prose" id="aBody"></div>
+
+  <div class="author-box">
+    <img src="assets/avatar.jpg" alt="沐枫老师">
+    <div class="info">
+      <h4>沐枫老师</h4>
+      <div class="role">AI 职业外脑操盘师</div>
+      <p>10 年互联网实战，专为知识 IP 与职场困境人士搭建职业外脑，低成本高转化自动化发售系统。</p>
+    </div>
+  </div>
+
+  <div class="back-link"><a href="index.html#posts">← 返回全部文章</a></div>
+</article>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-kicker" style="color:var(--gold-soft)">CONTACT · 约沐枫老师聊聊</div>
+      <h2 class="sec-title">别再用最苦逼的方法硬撑了</h2>
+      <p>花 20 分钟，我帮你诊断你发售链条里最卡的那一环，告诉你下一步该怎么走。</p>
+      <div class="cta-links">
+        <a class="btn btn-primary" href="https://mp.weixin.qq.com/s/91KeBuyKSpL8HPCSSfm9bg" target="_blank" rel="noopener">加微信预约 · 免费约诊</a>
+        <a class="btn btn-ghost" href="https://xiaobot.net/p/1968532?refer=0e32756f-9536-4839-a35a-4283cbd5a959" target="_blank" rel="noopener">订阅小报童专栏</a>
+      </div>
+      <div class="cta-links" style="margin-top:18px">
+        <span class="cta-chip">微信：tianak43</span>
+        <span class="cta-chip">小报童：职业外脑复盘复利飞轮</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">沐枫博客<small>AI · 职业外脑</small></div>
+      <div class="foot-tags">
+        <span>长期主义践行者</span><span>静水流深</span><span>自在如风</span><span>创业者</span>
+        <span>AI 发售思维</span><span>温润而坚定</span><span>水到渠成</span><span>沐风而行</span>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      © 2026 沐枫博客 · AI 职业外脑 · 沐风而行，水到渠成
+    </div>
+  </div>
+</footer>
+
+<!-- 打赏 / 加微信 浮动条 -->
+<div class="float-bar" id="floatBar">
+  <button class="fb-btn fb-tip" onclick="openModal('tipModal')">💰 打赏支持</button>
+  <span class="fb-id">微信 tianak43</span>
+  <button class="fb-btn fb-wx" onclick="openModal('wxModal')">💬 加微信</button>
+</div>
+
+<!-- 打赏弹窗 -->
+<div class="modal-overlay" id="tipModal">
+  <div class="modal">
+    <span class="close" onclick="closeModal('tipModal')">×</span>
+    <h3>打赏支持沐枫老师</h3>
+    <p>如果这篇文章对你有启发，欢迎打赏支持。</p>
+    <img src="assets/tip-qr.jpg" alt="打赏收款码" style="display:block;margin:20px auto;max-height:280px;width:auto;border-radius:14px">
+    <p style="font-size:12px;color:#c0b49d">长按识别二维码，感谢支持 🙏</p>
+  </div>
+</div>
+
+<!-- 加微信弹窗 -->
+<div class="modal-overlay" id="wxModal">
+  <div class="modal">
+    <span class="close" onclick="closeModal('wxModal')">×</span>
+    <h3>加沐枫老师微信</h3>
+    <p>免费约诊 · 发售卡点诊断 · 20 分钟聊清楚</p>
+    <img src="assets/wechat-qr.jpg" alt="微信二维码" style="display:block;margin:20px auto;max-height:280px;width:auto;border-radius:14px">
+    <div class="wx-id">tianak43</div>
+    <button class="btn-copy" id="copyBtn" onclick="copyWx()">复制微信号</button>
+  </div>
+</div>
+
+<script>
+  /* ============================================================
+     ★ 在这里添加你的文章（复制下面一段，改 id / 字段即可）
+     然后首页卡片链接写 article.html?id=你的id
+     ============================================================ */
+  const ARTICLES = {
+    demo: {
+      title: "35 岁职场卡壳怎么办？把经验沉淀成可复利的资产",
+      category: "职业外脑",
+      coverClass: "t3",
+      coverText: "职业外脑",
+      date: "2026-08-21",
+      read: "阅读约 5 分钟",
+      body: `
+        <p>很多人在 35 岁这个节点，突然发现自己「升不上去」了。往上走，位置就那么几个；往下看，身后全是更年轻、更便宜、更愿意加班的人。卡在中间，进退两难。</p>
+        <p>但我想说的是：<b>你不是没价值了，而是你的价值还没有被「资产化」。</b></p>
+        <h2>你的 10 年经验，为什么卖不出钱？</h2>
+        <p>因为你一直把它当成「打工人技能」在用，而不是当成「可复利资产」在经营。技能是线性的——干一天，拿一天钱；资产是复利的——建一次，持续产生回报。</p>
+        <blockquote>真正拉开差距的，不是你比别人多会几个技能，而是你有没有把经验，沉淀成一套可以反复售卖的系统。</blockquote>
+        <h2>什么是「职业外脑」？</h2>
+        <p>职业外脑，就是用 AI 把你的经验、方法论、话术、案例，全部沉淀成一个知识库 + 一套提示词系统。以后你不再靠「记忆」和「临场发挥」，而是靠系统稳定输出。</p>
+        <ul>
+          <li>把 10 年经验，整理成可复用的方法论</li>
+          <li>用 AI 把你的知识库，变成随时能调用的「第二大脑」</li>
+          <li>把方法论，包装成可以售卖的产品或服务</li>
+        </ul>
+        <h2>第一步该怎么走</h2>
+        <p>别一上来就想「创业」或「辞职」。先从最小的一步开始：把你最擅长的一件事，用一周时间，整理成一套 10 个问题就能说清楚的方法论。</p>
+        <div class="callout"><b>关键动作：</b>本周内，写下你最擅长解决的一个问题，然后列出解决它的 5 个步骤。这是你「职业外脑」的第一块砖。</div>
+        <p>如果你还不知道从哪里开始，欢迎约我聊聊。我帮你判断：你的经验，最适合沉淀成哪种可复利的资产。</p>
+      `
+    },
+
+    /* 复制这段来新增一篇文章
+    "ai-sellpoint": {
+      title: "为什么你发的内容没人下单？",
+      category: "AI 发售思维",
+      coverClass: "t1",
+      coverText: "AI 发售",
+      date: "2026-08-20",
+      read: "阅读约 6 分钟",
+      body: `<p>正文内容……</p>`
+    },
+    */
+  };
+
+  const id = new URLSearchParams(location.search).get('id') || 'demo';
+  const a = ARTICLES[id] || ARTICLES.demo;
+
+  document.title = a.title + ' · 沐枫博客';
+  document.getElementById('aTitle').textContent = a.title;
+  document.getElementById('aCat').textContent = a.category;
+  document.getElementById('aDate').textContent = '📅 ' + a.date;
+  document.getElementById('aRead').textContent = '⏱ ' + a.read;
+  const cover = document.getElementById('aCover');
+  cover.className = 'article-cover ' + (a.coverClass || 't3');
+  cover.textContent = a.coverText || a.category;
+  document.getElementById('aBody').innerHTML = a.body;
+
+  // 导航滚动阴影 + 移动端菜单
+  const header = document.getElementById('header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 20);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  document.querySelectorAll('.nav-links a').forEach(x =>
+    x.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open')));
+
+  // 打赏 / 加微信 浮动条：正文进入视口后显示
+  const floatBar = document.getElementById('floatBar');
+  window.addEventListener('scroll', () => {
+    const article = document.querySelector('.article-body');
+    if (!article) return;
+    const show = article.getBoundingClientRect().top < window.innerHeight * 0.6;
+    floatBar.classList.toggle('show', show);
+  }, { passive: true });
+
+  function openModal(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow = ''; }
+  document.querySelectorAll('.modal-overlay').forEach(ov =>
+    ov.addEventListener('click', e => { if (e.target === ov) closeModal(ov.id); }));
+
+  function copyWx() {
+    const btn = document.getElementById('copyBtn');
+    const done = () => { btn.textContent = '已复制 ✓'; btn.classList.add('copied'); setTimeout(() => { btn.textContent = '复制微信号'; btn.classList.remove('copied'); }, 2000); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText('tianak43').then(done).catch(() => { btn.textContent = '请手动输入：tianak43'; });
+    } else {
+      btn.textContent = '请手动输入：tianak43';
+    }
+  }
+</script>
+
+</body>
+</html>
