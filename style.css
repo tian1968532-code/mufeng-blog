@@ -113,7 +113,7 @@ header.scrolled {
 }
 .hero-tags span:hover { border-color: var(--brand-soft); color: var(--brand-deep); transform: translateY(-2px); }
 .hero-actions { display: flex; gap: 16px; margin-top: 38px; flex-wrap: wrap; }
-.btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; border-radius: 999px; font-size: 15px; font-weight: 500; transition: .25s; cursor: pointer; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; border-radius: 999px; font-size: 15px; font-weight: 500; transition: .25s; cursor: pointer; border: none; font-family: inherit; }
 .btn-primary { background: var(--brand); color: #fff; box-shadow: 0 16px 34px -12px rgba(255, 106, 0, .55); }
 .btn-primary:hover { background: var(--brand-deep); transform: translateY(-2px); }
 .btn-ghost { background: transparent; color: var(--brand-deep); border: 1.5px solid var(--brand-soft); }
