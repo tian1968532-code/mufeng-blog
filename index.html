@@ -296,7 +296,8 @@
       <h2 class="sec-title">别再用最苦逼的方法硬撑了</h2>
       <p>花 20 分钟，我帮你诊断你发售链条里最卡的那一环，告诉你下一步该怎么走。</p>
       <div class="cta-links">
-        <a class="btn btn-primary" href="https://mp.weixin.qq.com/s/91KeBuyKSpL8HPCSSfm9bg" target="_blank" rel="noopener">加微信预约 · 免费约诊</a>
+        <button class="btn btn-primary" onclick="openModal('wxModal')">💬 加微信 · 免费约诊</button>
+        <button class="btn btn-ghost" onclick="openModal('tipModal')">💰 打赏支持</button>
         <a class="btn btn-ghost" href="https://xiaobot.net/p/1968532?refer=0e32756f-9536-4839-a35a-4283cbd5a959" target="_blank" rel="noopener">订阅小报童专栏</a>
       </div>
       <div class="cta-links" style="margin-top:18px">
@@ -323,6 +324,28 @@
   </div>
 </footer>
 
+<!-- 打赏 / 加微信 弹窗 -->
+<div class="modal-overlay" id="tipModal">
+  <div class="modal">
+    <span class="close" onclick="closeModal('tipModal')">×</span>
+    <h3>打赏支持沐枫老师</h3>
+    <p>如果沐枫的内容对你有启发，欢迎打赏支持。</p>
+    <img src="assets/tip-qr.jpg" alt="打赏收款码" style="display:block;margin:20px auto;max-height:280px;width:auto;border-radius:14px">
+    <p style="font-size:12px;color:#c0b49d">长按 / 扫码识别二维码，感谢支持 🙏</p>
+  </div>
+</div>
+
+<div class="modal-overlay" id="wxModal">
+  <div class="modal">
+    <span class="close" onclick="closeModal('wxModal')">×</span>
+    <h3>加沐枫老师微信</h3>
+    <p>免费约诊 · 发售卡点诊断 · 20 分钟聊清楚</p>
+    <img src="assets/wechat-qr.jpg" alt="微信二维码" style="display:block;margin:20px auto;max-height:280px;width:auto;border-radius:14px">
+    <div class="wx-id">tianak43</div>
+    <button class="btn-copy" id="copyBtn" onclick="copyWx()">复制微信号</button>
+  </div>
+</div>
+
 <script>
   const header = document.getElementById('header');
   const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 20);
@@ -339,6 +362,18 @@
     });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // 打赏 / 加微信 弹窗
+  function openModal(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow = ''; }
+  document.querySelectorAll('.modal-overlay').forEach(ov => ov.addEventListener('click', e => { if (e.target === ov) closeModal(ov.id); }));
+  function copyWx() {
+    const btn = document.getElementById('copyBtn');
+    const done = () => { btn.textContent = '已复制 ✓'; btn.classList.add('copied'); setTimeout(() => { btn.textContent = '复制微信号'; btn.classList.remove('copied'); }, 2000); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText('tianak43').then(done).catch(() => { btn.textContent = '请手动输入：tianak43'; });
+    } else { btn.textContent = '请手动输入：tianak43'; }
+  }
 </script>
 
 </body>
