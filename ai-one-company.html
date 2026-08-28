@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI一人公司商业落地</title>
+<meta name="description" content="沐枫 · AI职业外脑操盘师 — 一人 × AI × 信任资产的商业落地方案">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFF8EC; --card:#FFFFFF; --line:#EFE2C8; --ink:#241B10; --ink2:#796C57;
+    --brand:#E53935; --brand-dark:#B72323; --gold:#FFC006; --gold-deep:#E8A200;
+    --orange:#F78C1B; --nav:#183F94; --pur:#4A148C; --ok:#2E8B57;
+    --serif:"Noto Serif SC",serif; --sans:"Noto Sans SC",sans-serif;
+    --wrap:1000px; --pad:28px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#1B171E; --card:#27212B; --line:#3C3440; --ink:#F5EDE0; --ink2:#B3A794;
+      --brand:#FF5A52; --brand-dark:#FF8A80; --gold:#FFC10A; --gold-deep:#FFB21A;
+      --orange:#FF9D3C; --nav:#6E92E8; --pur:#B97CF0; --ok:#55C88A;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#1B171E; --card:#27212B; --line:#3C3440; --ink:#F5EDE0; --ink2:#B3A794;
+    --brand:#FF5A52; --brand-dark:#FF8A80; --gold:#FFC10A; --gold-deep:#FFB21A;
+    --orange:#FF9D3C; --nav:#6E92E8; --pur:#B97CF0; --ok:#55C88A;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased;}
+  a{color:var(--nav);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
+
+  /* ---------- hero ---------- */
+  .hero{background:var(--gold);color:var(--ink);position:relative;overflow:hidden;
+    padding:64px var(--pad) 56px;border-top:8px solid var(--brand);}
+  .hero:after{content:"";position:absolute;right:-120px;top:-120px;width:340px;height:340px;
+    border-radius:50%;border:2px solid var(--orange);opacity:.5;pointer-events:none}
+  .hero .inner{max-width:var(--wrap);margin:0 auto}
+  .hero .eyebrow{font-size:14px;letter-spacing:.28em;font-weight:700;color:var(--brand-dark);
+    text-transform:uppercase;margin-bottom:14px}
+  .hero h1{font-family:var(--serif);font-weight:900;font-size:clamp(38px,7vw,72px);
+    line-height:1.05;margin:0;text-wrap:balance}
+  .hero h1 .c{color:var(--brand)}
+  .hero .sub{margin-top:18px;max-width:60ch;font-size:clamp(16px,2.2vw,20px);color:#5B4A1C}
+  .hero .meta{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px 26px;align-items:center;
+    font-size:14px;font-weight:700;color:#5B4A1C}
+  .hero .meta b{color:var(--brand-dark)}
+  .hero .inner{display:flex;align-items:center;gap:clamp(20px,4vw,46px)}
+  .hero .left{flex:1 1 auto;min-width:0}
+  .hero .port{flex:0 0 clamp(170px,28vw,278px);position:relative}
+  .hero .port img{width:100%;height:auto;border-radius:50%;display:block;
+    box-shadow:0 10px 30px rgba(90,50,0,.18)}
+  .hero .port:after{content:"";position:absolute;inset:-9px;border-radius:50%;
+    border:2px solid var(--orange);opacity:.65;pointer-events:none}
+  @media (max-width:720px){
+    .hero .inner{flex-direction:column;align-items:flex-start}
+    .hero .port{order:-1;width:150px}
+  }
+
+  /* ---------- section ---------- */
+  section{padding:44px var(--pad);}
+  section .inner{max-width:var(--wrap);margin:0 auto}
+  .kicker{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);
+    font-weight:800;margin-bottom:6px}
+  h2{font-family:var(--serif);font-weight:900;font-size:clamp(24px,3.4vw,34px);
+    margin:0 0 8px;text-wrap:balance;color:var(--ink)}
+  .lead{color:var(--ink2);max-width:72ch;font-size:16px;margin:0 0 8px}
+  .rule{height:2px;width:56px;background:linear-gradient(90deg,var(--brand),var(--orange));
+    border:0;margin:0}
+
+  /* callout formula */
+  .formula{margin-top:22px;background:var(--card);border:1px solid var(--line);
+    border-left:6px solid var(--brand);border-radius:12px;padding:22px 24px}
+  .formula .f{font-family:var(--serif);font-weight:900;font-size:clamp(20px,3vw,30px);
+    color:var(--ink)}
+  .formula .f em{font-style:normal;color:var(--brand)}
+  .formula .f .mul{padding:0 6px;color:var(--ink2)}
+  .formula p{margin:12px 0 0;color:var(--ink2);font-size:15px}
+  .bold{color:var(--brand);font-weight:700}
+
+  /* table */
+  .tbl{width:100%;border-collapse:collapse;margin-top:20px;font-size:15px;
+    font-variant-numeric:tabular-nums}
+  .tbl th,.tbl td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line)}
+  .tbl thead th{background:var(--ink);color:var(--bg);font-weight:800}
+  tbody tr:nth-child(even){background:color-mix(in srgb,var(--card) 70%,var(--bg))}
+  .tbl .hi{color:var(--brand);font-weight:800}
+  .tbl .dim{color:var(--ink2);font-size:13px;display:block}
+  .scroll{overflow-x:auto}
+
+  /* two col pain/sol */
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .card.pain{border-left:6px solid var(--ink2)}
+  .card.sol{border-left:6px solid var(--brand);background:
+    linear-gradient(0deg,color-mix(in srgb,var(--gold) 8%,var(--card)),var(--card))}
+  .card h3{margin:0 0 6px;font-size:18px;font-family:var(--serif);font-weight:900}
+  .card.pain h3{color:var(--ink2)}
+  .card.sol h3{color:var(--brand)}
+  .card ul{margin:8px 0 0;padding-left:20px;color:var(--ink2);font-size:15px}
+  .card.sol ul{color:var(--ink)}
+  .card.tick li{list-style:none;position:relative;padding-left:24px;margin:6px 0}
+  .card.tick li:before{content:"✓";position:absolute;left:0;color:var(--brand);font-weight:900}
+
+  /* business grid */
+  .biz{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:24px}
+  .biz .b{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+  .biz .b .k{font-size:12px;letter-spacing:.14em;font-weight:800;color:var(--orange);
+    text-transform:uppercase;margin-bottom:8px}
+  .biz .b .v{font-size:16px;font-weight:600;color:var(--ink)}
+  .biz .span5{grid-column:span 5}.biz .span7{grid-column:span 7}.biz .span4{grid-column:span 4}
+  .biz .span12{grid-column:span 12}
+  .biz .big{background:var(--nav);color:#fff;border-color:transparent}
+  .biz .big .k{color:var(--gold)}.biz .big .v{color:#fff;font-size:17px}
+  .biz .tint{background:linear-gradient(0deg,color-mix(in srgb,var(--orange) 12%,var(--card)),var(--card))}
+
+  /* ladder */
+  .ladder{margin-top:26px;display:flex;flex-direction:column;align-items:center;gap:8px}
+  .tier{border-radius:10px;color:#fff;padding:12px 10px;text-align:center;min-width:150px;}
+  .tier .t{font-weight:800;font-size:16px}
+  .tier .s{font-size:12px;opacity:.9}
+  .tier.t1{background:var(--brand);width:56%}
+  .tier.t2{background:var(--pur);width:72%}
+  .tier.t3{background:var(--orange);width:86%}
+  .tier.t4{background:var(--nav);width:96%}
+  .tier.t5{background:var(--ok);width:100%}
+  .note{font-size:13px;color:var(--ink2);text-align:center;margin-top:10px}
+
+  /* 3 cards */
+  .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+  .lev{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;
+    border-top:5px solid var(--brand)}
+  .lev .n{width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--bg);
+    font-weight:900;display:grid;place-items:center;margin-bottom:12px}
+  .lev h3{margin:0 0 8px;font-family:var(--serif);font-weight:900;font-size:20px}
+  .lev p{margin:0;color:var(--ink2);font-size:15px}
+
+  /* timeline */
+  .tl{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:26px;position:relative}
+  .tl .ph{padding:0 18px;position:relative}
+  .tl .ph:before{content:"";position:absolute;top:8px;left:0;right:0;height:2px;background:var(--line)}
+  .tl .ph:after{content:"";position:absolute;top:2px;left:18px;width:14px;height:14px;border-radius:50%;
+    background:var(--brand);border:3px solid var(--bg)}
+  .tl .tag{display:inline-block;font-family:var(--serif);font-weight:900;font-size:20px;
+    color:var(--brand);margin:10px 0 4px}
+  .tl .tt{font-weight:800;margin-bottom:10px}
+  .tl ul{margin:0;padding-left:18px;color:var(--ink2);font-size:14.5px}
+
+  /* funnel */
+  .funnel{margin-top:26px;display:flex;flex-direction:column;align-items:center;gap:10px}
+  .fn{border-radius:10px;color:#fff;padding:12px 14px;text-align:center;font-weight:800}
+  .f1{background:var(--orange);width:92%}
+  .f2{background:var(--nav);width:78%}
+  .f3{background:var(--brand);width:64%}
+  .north{margin-top:22px;background:var(--pur);color:#fff;border-radius:14px;padding:18px 22px;
+    display:flex;gap:14px;align-items:center}
+  .north .lab{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#e9d9ff;font-weight:800}
+  .north .k{font-family:var(--serif);font-weight:900;font-size:20px}
+  .north .d{font-size:14px;color:#e9d9ff;margin-top:2px}
+
+  /* risk */
+  .risk{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+  .risk .r{border-radius:14px;padding:20px;background:color-mix(in srgb,var(--bg) 60%,var(--card));
+    border:1px solid var(--line)}
+  .risk .a{display:inline-block;font-size:12px;letter-spacing:.12em;font-weight:800;color:var(--ink2);
+    text-transform:uppercase;margin-bottom:10px}
+  .risk h4{margin:0 0 6px;font-family:var(--serif);font-weight:900;font-size:18px}
+  .risk .sol{font-size:14.5px;color:var(--ink2)}
+
+  /* next cta */
+  .cta{margin-top:26px;background:var(--brand);color:#fff;border-radius:16px;padding:26px 28px;
+    display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
+  .cta h3{margin:0;font-family:var(--serif);font-weight:900;font-size:22px}
+  .cta p{margin:6px 0 0;color:#ffd7d4;font-size:15px}
+  .cta .pill{background:#fff;color:var(--brand-dark);font-weight:800;padding:12px 20px;
+    border-radius:999px;white-space:nowrap}
+
+  footer{border-top:1px solid var(--line);padding:28px var(--pad);margin-top:12px}
+  footer .inner{max-width:var(--wrap);margin:0 auto;display:flex;flex-wrap:wrap;
+    gap:10px 22px;align-items:center;justify-content:space-between;color:var(--ink2);font-size:13px}
+  footer .sig{font-family:var(--serif);font-weight:900;color:var(--ink);font-size:15px}
+
+  @media (max-width:720px){
+    .duo,.trio,.risk{grid-template-columns:1fr}
+    .tl{grid-template-columns:1fr;gap:22px}
+    .tl .ph:before{top:auto;bottom:6px;left:8px;right:auto;height:calc(100% + 22px);width:2px}
+    .tl .ph:after{left:-1px;top:0}
+    .biz .span5,.biz .span7,.biz .span4{grid-column:span 12}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="inner">
+    <div class="left">
+      <div class="eyebrow">商业落地 · 操盘底座版</div>
+      <h1>心中有沐枫<span class="c">，</span><br>万事超轻松</h1>
+      <p class="sub">AI 一人公司，<strong>如何商业落地</strong> —— 用一支 AI 军队，把一个人的生意做成复利资产。</p>
+      <div class="meta">
+        <span>出品 <b>沐枫 · AI 职业外脑操盘师</b></span>
+        <span>河南 · 郑州</span>
+        <span>AI 发售职业外脑</span>
+      </div>
+    </div>
+    <div class="port"><img src="assets/mufeng-portrait.png" alt="沐枫 · AI 职业外脑操盘师"></div>
+  </div>
+</header>
+
+<!-- 一句话结论 -->
+<section style="padding-top:34px">
+  <div class="inner">
+    <div class="kicker">One-line thesis</div>
+    <h2>一句话结论</h2>
+    <div class="formula">
+      <div class="f"><em>一人</em><span class="mul">×</span><em>AI</em><span class="mul">×</span><em>信任资产</em></div>
+      <p>AI 一人公司商业落地的本质，是这个飞轮：用 AI 把一个人的产能放大成一支团队，用信任资产把流量稳成复利，用发售系统把内容变成成交。<b class="bold">真正的护城河不是会用 AI，是能持续产出成交内容。</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- 定义 -->
+<section style="padding-top:20px">
+  <div class="inner">
+    <div class="kicker">What it is</div>
+    <h2>什么是 AI 一人公司</h2>
+    <p class="lead">1 个真人 + AI 工具矩阵 = 一家能赚钱的公司。轻资产、高毛利、强杠杆。真人只做判断、信任、关系，其余全交给 AI 放大。</p>
+    <div class="scroll"><table class="tbl">
+      <thead><tr><th>维度</th><th>自由职业</th><th>小微公司</th><th>AI 一人公司</th></tr></thead>
+      <tbody>
+        <tr><td>卖什么</td><td>时间</td><td>团队</td><td class="hi">资产 / 产品</td></tr>
+        <tr><td>边际成本</td><td>一单一单叠加</td><td>人力成本高</td><td class="hi">趋近 0</td></tr>
+        <tr><td>增长方式</td><td>干一单赚一单</td><td>靠管理摊薄利润</td><td class="hi">复利（内容可复用）</td></tr>
+        <tr><td>真人干什么</td><td>干所有事</td><td>带团队</td><td class="hi">只做判断 · 信任 · 关系</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<!-- 破局点 -->
+<section style="padding-top:20px">
+  <div class="inner">
+    <div class="kicker">The insight</div>
+    <h2>你的破局点：不是不会用 AI，是缺成交素材系统</h2>
+    <div class="duo">
+      <div class="card pain">
+        <h3>你要的人（常见困境）</h3>
+        <ul>
+          <li>朋友圈 / 社群 / 直播稿 / 私聊话术天天写</li>
+          <li>写到半夜还像拼凑废话</li>
+          <li>客户看完没感觉，咨询没人来</li>
+          <li>成交全靠硬催</li>
+          <li>还在用最原始、最苦逼的老办法</li>
+        </ul>
+      </div>
+      <div class="card sol tick">
+        <h3>沐枫的解法（AI 点金手）</h3>
+        <p style="font-weight:800;margin:0 0 4px">AI 生成成交内容，不只是生成内容：</p>
+        <ul>
+          <li>有卖点</li><li>有内容</li><li>有话术</li>
+          <li>有节奏</li><li>有成交路径</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 商业模式 -->
+<section style="padding-top:20px">
+  <div class="inner">
+    <div class="kicker">Business model</div>
+    <h2>商业模式画布 · 一人公司版</h2>
+    <div class="biz">
+      <div class="b big span5"><div class="k">价值主张</div><div class="v">用 AI 把一身发售能力放大成一支运营团队，让知识 IP 随时有可用成交素材</div></div>
+      <div class="b span7 tint"><div class="k">目标客群</div><div class="v">知识付费老师 / 实体商家 / 职场困境中层（25-55，想变找不到入口）</div></div>
+      <div class="b span4"><div class="k">渠道</div><div class="v">公众号 · 朋友圈 · 社群 · 视频号直播 · 知识星球 · 小报童</div></div>
+      <div class="b span4"><div class="k">收入流</div><div class="v">电子书 → 小报童 → 星球 → 年度VIP → 陪跑</div></div>
+      <div class="b span4"><div class="k">成本结构</div><div class="v">极低：AI 订阅 + 时间，高毛利</div></div>
+      <div class="b span4"><div class="k">核心资源</div><div class="v">10 年实战 + AI 点金手提示词系统 + 信任 IP「沐枫」</div></div>
+      <div class="b span4"><div class="k">护城河</div><div class="v">成交结果 + 真实案例，而非工具</div></div>
+      <div class="b span4"><div class="k">关键活动</div><div class="v">内容飞轮 · 发售 SOP · 陪跑交付</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 产品阶梯 -->
+<section style="padding-top:20px">
+  <div class="inner">
+    <div class="kicker">Product ladder</div>
+    <h2>产品阶梯：从钩子到陪跑</h2>
+    <p class="lead">每一层都是下一层的信任证明：下层轻转化，上层深转化。</p>
+    <div class="ladder">
+      <div class="tier t1"><div class="t">发售实战陪跑</div><div class="s">高客单 · 1v1</div></div>
+      <div class="tier t2"><div class="t">年度 VIP 会员</div><div class="s">主打 · 12 模块系统</div></div>
+      <div class="tier t3"><div class="t">知识星球 社群</div><div class="s">中档 · 答疑社交</div></div>
+      <div class="tier t4"><div class="t">小报童 专栏</div><div class="s">入门 · 轻咨询</div></div>
+      <div class="tier t5"><div class="t">免费电子书 × 8</div><div class="s">底层钩子 · 低成本获客</div></div>
+    </div>
+    <p class="note">VIP 12 模块：发售方案策划师 · 朋友圈 · 自动收钱 · 个人品牌故事 · 销冠成交 · 社群发售 · 引流互推 · 痛点 · 投票 · 直播预告 · 客户见证 · 公众号</p>
+  </div>
+</section>
+
+<!-- 三大杠杆 -->
+<section style="padding-top:20px">
+  <div class="inner">
+    <div class="kicker">Three levers</div>
+    <h2>AI 一人公司的三大杠杆</h2>
+    <div class="trio">
+      <div class="lev"><div class="n">1</div><h3>内容杠杆</h3><p>一篇内容裂变成朋友圈 / 公众号 / 直播 / 社群 / 私聊五张脸，一鱼多吃。</p></div>
+      <div class="lev" style="border-top-color:var(--orange)"><div class="n">2</div><h3>信任杠杆</h3><p>真实人设 + 持续输出 → 信任资产 → 复购与转介绍。信任不会被 AI 平替。</p></div>
+      <div class="lev" style="border-top-color:var(--nav)"><div class="n">3</div><h3>AI 杠杆</h3><p>提示词系统直接产出成交素材，把内容从消耗变成印钞。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 路线 -->
+<section style="padding-top:20px">
+  <div class="inner">
+    <div class="kicker">Roadmap</div>
+    <h2>30 / 60 / 90 天落地路线</h2>
+    <div class="tl">
+      <div class="ph"><div class="tag">0-30 天</div><div class="tt">跑通最小闭环</div>
+        <ul><li>钩子 → 小报童 → 星球</li><li>验证真实付费意愿</li><li>日更朋友圈 + 周 1 直播</li></ul></div>
+      <div class="ph"><div class="tag">31-60 天</div><div class="tt">上线主打产品</div>
+        <ul><li>上线年度 VIP 12 模块</li><li>搭建发售 SOP</li><li>做 1 次完整发售演练</li></ul></div>
+      <div class="ph"><div class="tag">61-90 天</div><div class="tt">开启高客单</div>
+        <ul><li>开启发售实战陪跑</li><li>SOP 打包成发售资产</li><li>冲刺月度稳定收入</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 指标 -->
+<section style="padding-top:20px">
+  <div class="inner">
+    <div class="kicker">Metrics</div>
+    <h2>盯漏斗，不盯单点</h2>
+    <div class="funnel">
+      <div class="fn f1">获客 · 涨粉 · 电子书领取率 · 公众号打开率</div>
+      <div class="fn f2">转化 · 小报童→星球 · 星球→VIP 转化率</div>
+      <div class="fn f3">深转化 · VIP→陪跑 · 复购率 · 转介绍数</div>
+    </div>
+    <div class="north">
+      <div><div class="lab">北极星指标</div><div class="k">月度稳定收入</div></div>
+      <div class="d">（或年度 VIP 付费用户数）—— 哪里断流，哪里就是你的操盘点。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 风险 -->
+<section style="padding-top:20px">
+  <div class="inner">
+    <div class="kicker">Risks</div>
+    <h2>风险与应对</h2>
+    <div class="risk">
+      <div class="r"><span class="a">风险一</span><h4>流量断档</h4><p class="sol">建内容资产 + 私域池，不押注单一平台。</p></div>
+      <div class="r"><span class="a">风险二</span><h4>用户学不会</h4><p class="sol">SOP 化 + 陪跑兜底，把「教」变「代」。</p></div>
+      <div class="r"><span class="a">风险三</span><h4>AI 同质化</h4><p class="sol">强调成交结果而非工具，用真实案例做护城河。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding-top:14px">
+  <div class="inner">
+    <div class="cta">
+      <div><h3>下一步</h3><p>先跑通 30 天最小闭环：钩子 → 小报童 → 知识星球。</p></div>
+      <div class="pill">心中有沐枫 · 万事超轻松</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="inner">
+    <span class="sig">沐枫 · AI 职业外脑操盘师</span>
+    <span>公众号：沐枫手记plus</span>
+    <span>主题：AI 一人公司如何商业落地</span>
+  </div>
+</footer>
+
+</body>
+</html>
